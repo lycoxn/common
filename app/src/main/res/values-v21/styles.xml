@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/activity_explode</item>
+        <item name="android:windowExitTransition">@transition/activity_fade</item>
+        <item name="android:windowReenterTransition">@transition/activity_slide</item>
+        <item name="android:windowReturnTransition">@transition/activity_explode</item>
+    </style>
+    <style name="transitionSkip" parent="Theme.AppCompat.Light">
+        <item name="android:windowSharedElementEnterTransition">@transition/change_bounds</item>
+        <item name="android:windowSharedElementExitTransition">@transition/change_clip_bounds</item>
+        <item name="android:windowSharedElementReenterTransition">@transition/change_image_transform</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/change_transform</item>
+    </style>
+</resources>
