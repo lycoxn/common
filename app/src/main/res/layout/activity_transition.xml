@@ -16,6 +16,34 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="addTarget" />
+
+    <Button
+            android:id="@+id/changeBounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ChangeBounds" />
+
+    <Button
+            android:id="@+id/changeTransform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="changeTransform" />
+
+    <Button
+            android:id="@+id/changeClipBounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="changeClipBounds" />
+
+    <Button
+            android:id="@+id/changeImageTransform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ChangeImageTransform" />
     <!--这个View用来做动画的父布局-->
     <FrameLayout
             android:id="@+id/rootView"
@@ -24,4 +52,5 @@
 
         <include layout="@layout/scene1" />
     </FrameLayout>
+
 </LinearLayout>
