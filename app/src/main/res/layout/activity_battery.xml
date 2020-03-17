@@ -10,22 +10,15 @@
             android:id="@+id/bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="电池状态"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-            android:id="@+id/et_search"
+    <TextView
+            android:id="@+id/tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@null"
-            android:gravity="center"
-            android:hint="请输入"
-            android:imeOptions="actionSearch"
-            android:maxLines="1"
-            android:minWidth="66dp"
-            android:singleLine="true"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bt" />

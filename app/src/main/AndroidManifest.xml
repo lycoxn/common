@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.lycon.common">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -40,7 +41,9 @@
                         android:scheme="myapp" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SlideBottomActivity" />
+        <activity
+                android:name=".ui.SlideBottomActivity"
+                android:launchMode="singleTop" />
         <activity android:name=".ui.BackResultActivity" />
         <activity android:name=".ui.WebViewActivity" />
         <activity
@@ -48,6 +51,10 @@
                 android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".ui.transition.TransitionActivity" />
         <activity android:name=".ui.transition.TransitionImageActivity" />
+        <activity android:name=".ui.vr.VR360Activity" />
+        <activity android:name=".ui.hook.HookTestActivity" />
+        <activity android:name=".ui.hook.ProxyHookActivity" />
+        <activity android:name=".ui.BatteryActivity" />
     </application>
 
 </manifest>

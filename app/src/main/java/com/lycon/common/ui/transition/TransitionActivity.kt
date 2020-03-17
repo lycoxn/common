@@ -25,13 +25,15 @@ class TransitionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transition)
         begin.setOnClickListener {
-            val scene2 = Scene.getSceneForLayout(rootView, com.lycon.common.R.layout.scene2, this)
+            val scene2 = Scene.getSceneForLayout(rootView, R.layout.scene2, this)
             TransitionManager.go(scene2, ChangeBounds())
         }
         addTarget.setOnClickListener {
-            val scene2 = Scene.getSceneForLayout(rootView, com.lycon.common.R.layout.scene2, this)
+            val scene2 = Scene.getSceneForLayout(rootView, R.layout.scene2, this)
             val changeBounds = ChangeBounds()
-            changeBounds.addTarget(com.lycon.common.R.id.image1)
+//            changeBounds.addTarget(R.id.image1)
+//            changeBounds.addTarget(R.id.image2)
+//            changeBounds.addTarget(R.id.image3)
             TransitionManager.go(scene2, changeBounds)
         }
         var tag = 0
