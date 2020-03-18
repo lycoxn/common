@@ -27,7 +27,8 @@ class BatteryActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        unregisterReceiver(receiver)
+        if (receiver != null)
+            unregisterReceiver(receiver)
         super.onDestroy()
     }
 }

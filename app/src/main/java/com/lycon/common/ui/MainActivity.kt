@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.lycon.common.adapter.MainAdapter
 import com.lycon.common.bean.Single
 import com.lycon.common.network.NetBroadcastReceiver
@@ -19,19 +20,18 @@ class MainActivity : AppCompatActivity(), NetBroadcastReceiver.NetStatusMonitor 
 
     private var isLive = true
     var i = 1
-    var single: Single? = Single("1212")
+//    var single: Single? = Single("1212")
     protected var netBroadcastReceiver: NetBroadcastReceiver? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.lycon.common.R.layout.activity_main)
         recycler.layoutManager = LinearLayoutManager(this)
-        val activities =
-            packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).activities
+        val activities = packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).activities
         val adapter = MainAdapter(this, activities)
         recycler.adapter = adapter
-        bt.setOnClickListener {
-            val testNull: TestNull? = null
-            testNull?.testNull(this)
+//        bt.setOnClickListener {
+//            val testNull: TestNull? = null
+//            testNull?.testNull(this)
 //            startActivity(Intent(this, WebViewActivity::class.java))
 //            startActivityForResult(
 //                Intent(
@@ -39,14 +39,14 @@ class MainActivity : AppCompatActivity(), NetBroadcastReceiver.NetStatusMonitor 
 //                    BackResultActivity::class.java
 //                ), 1000
 //            )
-        }
+//        }
         registerBroadcastReceiver()
 
-        single?.let {
-            Toast.makeText(this, "111", Toast.LENGTH_SHORT).show()
-        } ?: let {
-            Toast.makeText(this, "222", Toast.LENGTH_SHORT).show()
-        }
+//        single?.let {
+//            Toast.makeText(this, "111", Toast.LENGTH_SHORT).show()
+//        } ?: let {
+//            Toast.makeText(this, "222", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     /**
@@ -74,6 +74,6 @@ class MainActivity : AppCompatActivity(), NetBroadcastReceiver.NetStatusMonitor 
     }
 
     override fun onNetChange(netStatus: Boolean) {
-        startActivity(Intent(this, SlideBottomActivity::class.java).putExtra("tag", i++))
+//        startActivity(Intent(this, SlideBottomActivity::class.java).putExtra("tag", i++))
     }
 }
