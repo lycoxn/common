@@ -1,18 +1,17 @@
 package com.lycon.common.ui
 
+import android.Manifest
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.lycon.common.adapter.MainAdapter
-import com.lycon.common.bean.Single
 import com.lycon.common.network.NetBroadcastReceiver
-import com.lycon.common.network.TestNull
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -20,13 +19,15 @@ class MainActivity : AppCompatActivity(), NetBroadcastReceiver.NetStatusMonitor 
 
     private var isLive = true
     var i = 1
-//    var single: Single? = Single("1212")
+    //    var single: Single? = Single("1212")
     protected var netBroadcastReceiver: NetBroadcastReceiver? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.lycon.common.R.layout.activity_main)
         recycler.layoutManager = LinearLayoutManager(this)
-        val activities = packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).activities
+        val activities =
+            packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).activities
         val adapter = MainAdapter(this, activities)
         recycler.adapter = adapter
 //        bt.setOnClickListener {
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity(), NetBroadcastReceiver.NetStatusMonitor 
 //            )
 //        }
         registerBroadcastReceiver()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) !== PackageManager.PERMISSION_GRANTED)
+                requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+        }
+
 
 //        single?.let {
 //            Toast.makeText(this, "111", Toast.LENGTH_SHORT).show()
