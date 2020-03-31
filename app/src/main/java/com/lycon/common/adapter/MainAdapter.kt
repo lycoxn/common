@@ -19,7 +19,8 @@ class MainAdapter(private var context: Context, private var list: Array<Activity
     RecyclerView.Adapter<MainViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        val v = LayoutInflater.from(context).inflate(com.lycon.common.R.layout.item_main, parent, false)
+        val v =
+            LayoutInflater.from(context).inflate(com.lycon.common.R.layout.item_main, parent, false)
         return MainViewHolder(v)
     }
 
@@ -28,9 +29,9 @@ class MainAdapter(private var context: Context, private var list: Array<Activity
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-         holder.itemView.tv.text = list[position].name
+        holder.itemView.tv.text = list[position].name
         holder.itemView.tv.setOnClickListener {
-//            val activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(context as MainActivity)
+            //            val activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(context as MainActivity)
 //            val intent = Intent(context, Class.forName(list[position].name))
 //            context.startActivity(intent, activityOptionsCompat.toBundle())
             context.startActivity(Intent(context, Class.forName(list[position].name)))
